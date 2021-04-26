@@ -111,11 +111,6 @@ export default new Vuex.Store({
         let fileBuffer = await file.arrayBuffer();
         let patchData = new Uint8Array(fileBuffer);
 
-        if (file.name === '04Double Bass.syx') { 
-          metaData.error = new Error("Not a SysEx file format")
-          return metaData
-        }
-
         // Check if this is SysEx file
         if (patchData[0] != 0xf0 || patchData[patchData.length - 1] != 0xf7) {
           metaData.error = new Error("Not a SysEx file format");
