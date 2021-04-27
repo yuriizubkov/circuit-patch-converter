@@ -252,7 +252,7 @@ export default new Vuex.Store({
           // Swapping product ID
           convertedPatchData[5] = convertedPatchData[5] === 0x60 ? 0x64 : 0x60
           let convertedProductID = patchInfo.product === 'Circuit' ? 'CircuitTracks' : 'Circuit'
-          let convertedFileName = sanitize(patchInfo.name) + '.' + convertedProductID + '.SinglePatch.syx'
+          let convertedFileName = sanitize(patchInfo.name + '.' + convertedProductID + '.SinglePatch.syx')
           console.log('Patch converted:', convertedFileName)
           downloadFile(convertedPatchData, convertedFileName, "application/octet-stream");
           if (++count >= 10) {
