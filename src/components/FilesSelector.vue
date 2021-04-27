@@ -14,7 +14,7 @@
     >
     <!-- Upload Button -->
     <v-btn @click="$refs.filebtn.click()">
-      <v-icon left dark>mdi-cloud-upload</v-icon>
+      <v-icon left dark>mdi-harddisk</v-icon>
       Select files
     </v-btn>
     <!-- Indicate files can be dropped in here -->

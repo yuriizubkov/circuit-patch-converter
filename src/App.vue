@@ -31,8 +31,8 @@
             :disabled="filesNotEmpty !== true"
             @click="convertAndDownloadFiles"
           >
-            <v-icon left dark>mdi-cloud-download</v-icon>
-            Convert and download
+            <v-icon left dark>mdi-content-save</v-icon>
+            Convert and save
           </v-btn>
         </v-row>
       </v-col>
@@ -60,32 +60,7 @@ export default {
     ...mapGetters([ 'filesNotEmpty' ])
   },
   methods: {
-    downloadURL: function (data, fileName) {
-      // https://stackoverflow.com/questions/25354313/saving-a-uint8array-to-a-binary-file/62176999#62176999
-      const a = document.createElement("a");
-      a.href = data;
-      a.download = fileName;
-      document.body.appendChild(a);
-      a.style.display = "none";
-      a.click();
-      a.remove();
-    },
-    downloadFile: function (data, fileName, mimeType) {
-      const blob = new Blob([data], {
-        type: mimeType,
-      });
-
-      const url = window.URL.createObjectURL(blob);
-      this.downloadURL(url, fileName);
-      setTimeout(() => window.URL.revokeObjectURL(url), 1000);
-    },
-    convertAndDownloadFiles: function () {
-      // TODO: remove this implementation
-      for (let file of this.files) {
-        this.downloadFile(file, "MyCoolPatch.syx", "application/octet-stream");
-      }
-    },
-    ...mapActions([ 'processFiles' ])
+    ...mapActions([ 'processFiles', 'convertAndDownloadFiles' ])
   },
 };
 </script>
