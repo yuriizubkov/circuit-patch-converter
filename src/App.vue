@@ -5,7 +5,7 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn href="" target="_blank" text>
+      <v-btn href="/novation/2021/04/27/circuit-patch-converter.html" target="_blank" text>
         <span class="mr-2">How it works</span>
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
