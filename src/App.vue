@@ -6,7 +6,7 @@
       <v-spacer></v-spacer>
 
       <v-btn href="" target="_blank" text>
-        <span class="mr-2">About</span>
+        <span class="mr-2">How it works</span>
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
     </v-app-bar>
@@ -28,10 +28,18 @@
             depressed
             color="primary"
             large
-            :disabled="filesNotEmpty !== true"
+            :disabled="!filesNotEmpty && !downloadInProcess"
             @click="convertAndDownloadFiles"
           >
-            <v-icon left dark>mdi-content-save</v-icon>
+            <v-icon v-if="!downloadInProcess" left dark>mdi-content-save</v-icon>
+            <v-progress-circular
+              v-else
+              :size="18"
+              :width="3"
+              color="green"
+              indeterminate
+              class="mr-1"
+            ></v-progress-circular>
             Convert and save
           </v-btn>
         </v-row>
@@ -56,7 +64,7 @@ export default {
     }
   },
   computed: {
-    ...mapState([ 'files' ]),
+    ...mapState([ 'files', 'downloadInProcess' ]),
     ...mapGetters([ 'filesNotEmpty' ])
   },
   methods: {

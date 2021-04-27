@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mb-5" shaped elevation="2">
+  <v-card class="mb-5" shaped elevation="2" :color="fileInfo.metaData && fileInfo.metaData.converted ? 'teal darken-4': ''">
     <v-card-title>
       <v-icon class="mr-1" v-if="fileInfo.metaData">{{
         fileInfo.metaData && fileInfo.metaData.fileType === "Patch Pack"
@@ -17,6 +17,18 @@
       v-if="fileInfo.metaData && !fileInfo.metaData.error"
     >
       {{ fileInfo.metaData.product + " - " + fileInfo.metaData.fileType }}
+      <v-tooltip bottom>
+        <template v-slot:activator="{ on, attrs }">
+          <v-icon
+            v-bind="attrs"
+            v-on="on"
+          >
+            mdi-chevron-right
+          </v-icon>
+        </template>
+        <span>Will be converted to</span>
+      </v-tooltip>
+      {{ fileInfo.metaData.product === 'Circuit'? 'Circuit Tracks': 'Circuit' }}
     </v-card-subtitle>
     <v-card-text>
       <ul class="pl-5" v-if="fileInfo.metaData && !fileInfo.metaData.error">
