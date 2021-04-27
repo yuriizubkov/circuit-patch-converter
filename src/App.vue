@@ -28,7 +28,7 @@
             depressed
             color="primary"
             large
-            :disabled="!filesNotEmpty && !downloadInProcess"
+            :disabled="!filesNotEmpty || downloadInProcess"
             @click="convertAndDownloadFiles"
           >
             <v-icon v-if="!downloadInProcess" left dark>mdi-content-save</v-icon>

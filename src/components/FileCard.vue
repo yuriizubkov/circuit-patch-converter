@@ -62,6 +62,7 @@
             Genre: <strong>{{ patch.genre }}</strong>
           </v-chip>
           <v-chip
+            dense
             v-if="!patch.error"
             color="indigo lighten-2"
             class="mt-2"
@@ -72,7 +73,6 @@
         </li>
       </ul>
       <v-alert
-        dense
         border="left"
         type="error"
         v-if="fileInfo.metaData && fileInfo.metaData.error"
