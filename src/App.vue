@@ -13,6 +13,10 @@
 
     <v-main>
       <v-col class="mb-5 mt-10" cols="12">
+        <v-row justify="center" class="text-h6 text-center mb-8">
+          A small utility for fast patch file conversion between Novation Circuit and Circuit Tracks format. <br/>
+          Works in both directions.
+        </v-row>
         <v-row justify="center">
           <FilesSelector
             label="Drop your .syx files here, or open from disk"

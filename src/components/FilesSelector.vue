@@ -20,7 +20,7 @@
     <!-- Indicate files can be dropped in here -->
     <p v-if="!disableHint">
       *You can select Single Patches and Patch Packs (not Circuit Packs).<br/>
-      All files will be saved as separate patches.
+      All files will be saved as separate patches. Works better in Chrome.
     </p>
     <!-- Indicate selected files -->
     <div class="input-container mt-5">
