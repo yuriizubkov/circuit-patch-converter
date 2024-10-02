@@ -2,7 +2,7 @@
 
 Small web-based tool for fast conversion between Novation Circuit patches and Circuit Tracks patches (and vise versa).
 
-[Online link](https://lensflare.dev/circuit-patch-converter/)
+[Online link](https://yuriizubkov.github.io/circuit-patch-converter/)
 
 ## Project setup
 ```
